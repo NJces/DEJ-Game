@@ -21,19 +21,19 @@
                   </ImageInput>
                </effect></Label>
                 <VBox spacing="0.02">
-                    <Button fx:id="boostBtn">
+                    <Button fx:id="boostBtn" onAction="#boost">
                   <effect>
-                     <ImageInput x="8.0" y="-1.0">
+                     <ImageInput fx:id="upFlash" x="8.0" y="-1.0">
                         <source>
-                           <Image url="/Image/UpFlash.png" />
+                           <Image url="/Image/RedUpFlash.png" />
                         </source>
                      </ImageInput>
                   </effect></Button>
-                    <Button fx:id="reduceBtn">
+                    <Button fx:id="reduceBtn" onAction="#radius">
                   <effect>
-                     <ImageInput x="8.0" y="-10.0">
+                     <ImageInput fx:id="downFlash" x="8.0" y="-10.0">
                         <source>
-                           <Image url="/Image/DownFlash.png" />
+                           <Image url="/Image/RedDownFlash.png" />
                         </source>
                      </ImageInput>
                   </effect></Button>
@@ -58,7 +58,7 @@
                      </stops>
                   </LinearGradient>
                </textFill></Label>
-                <Button fx:id="submitBtn" cache="true" cacheHint="QUALITY" nodeOrientation="LEFT_TO_RIGHT" prefHeight="0.0" prefWidth="33.0" style="-fx-background-radius: 50;                         -fx-background-image: url('/Image/submit.png');                         -fx-background-repeat: no-repeat;                         -fx-background-size: 16 16;                         -fx-background-position: center center;">
+                <Button fx:id="submitBtn" cache="true" cacheHint="QUALITY" nodeOrientation="LEFT_TO_RIGHT" onAction="#showPlayerList" prefHeight="30.0" prefWidth="33.0" style="-fx-background-radius: 50;                         -fx-background-image: url('/Image/submit.png');                         -fx-background-repeat: no-repeat;                         -fx-background-size: 16 16;                         -fx-background-position: center center;">
                     <cursor>
                         <Cursor fx:constant="DEFAULT" />
                     </cursor>
