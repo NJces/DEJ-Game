@@ -12,7 +12,14 @@
     </top>
 
     <center>
-        <VBox alignment="TOP_CENTER" spacing="20" style="-fx-padding: 270 10 10 10;               -fx-background-image: url('/Image/MenuBG.png');               -fx-background-repeat: no-repeat;               -fx-background-size: 600 600;               -fx-background-position: center center;               -fx-background-color: beige;">
+        <VBox alignment="TOP_CENTER" spacing="20"
+              style="-fx-padding: 270 10 10 10;
+              -fx-background-image: url('/Image/MenuBG.png');
+              -fx-background-repeat: no-repeat;
+              -fx-background-size: 600 600;
+              -fx-background-position: center center;
+              -fx-background-color: beige;
+              -fx-background-radius: 100">
             <Button alignment="CENTER" cache="true" prefHeight="25.0" prefWidth="80.0" style="-fx-background-radius: 10;" text="شروع">
             <cursor>
                <Cursor fx:constant="DEFAULT" />

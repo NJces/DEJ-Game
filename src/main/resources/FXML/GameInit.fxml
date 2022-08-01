@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane nodeOrientation="RIGHT_TO_LEFT" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.GameInit">
+    <center>
+        <VBox spacing="20" style="-fx-padding: 50 10 10 10; -fx-background-color: beige;">
+            <HBox spacing="10">
+                <Label prefHeight="29.0" prefWidth="37.0" textFill="#842c00">
+               <effect>
+                  <ImageInput y="-10.0">
+                     <source>
+                        <Image url="/Image/Player.png" />
+                     </source>
+                  </ImageInput>
+               </effect></Label>
+                <VBox spacing="0.02">
+                    <Button fx:id="boostBtn">
+                  <effect>
+                     <ImageInput x="8.0" y="-1.0">
+                        <source>
+                           <Image url="/Image/UpFlash.png" />
+                        </source>
+                     </ImageInput>
+                  </effect></Button>
+                    <Button fx:id="reduceBtn">
+                  <effect>
+                     <ImageInput x="8.0" y="-10.0">
+                        <source>
+                           <Image url="/Image/DownFlash.png" />
+                        </source>
+                     </ImageInput>
+                  </effect></Button>
+                </VBox>
+                <Label fx:id="player_NumTxt" prefHeight="23.0" prefWidth="25.0" style="-fx-background-color: white; -fx-background-insets: -1; -fx-background-radius: 30;" text="2 ">
+               <font>
+                  <Font name="Bauhaus 93" size="24.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.6793651035853794" endY="0.4888889494396391" startX="0.3174602826436361" startY="0.19682544526599702">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="1.0" green="0.8166666626930237" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.8700000047683716" green="0.28697481751441956" blue="0.16529999673366547" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill></Label>
+                <Button fx:id="submitBtn" cache="true" cacheHint="QUALITY" nodeOrientation="LEFT_TO_RIGHT" prefHeight="0.0" prefWidth="33.0" style="-fx-background-radius: 50;                         -fx-background-image: url('/Image/submit.png');                         -fx-background-repeat: no-repeat;                         -fx-background-size: 16 16;                         -fx-background-position: center center;">
+                    <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                    </cursor>
+                    <effect>
+                        <InnerShadow choke="0.24" height="40.52" radius="22.4775" width="51.39">
+                            <color>
+                                <Color red="0.640350878238678" green="0.4039744436740875" blue="0.2766948342323303" opacity="0.9700000286102295" />
+                            </color>
+                            <input>
+                                <Lighting diffuseConstant="1.88" specularConstant="1.27" specularExponent="17.52" surfaceScale="0.0">
+                                    <bumpInput>
+                                        <Shadow height="255.0" radius="63.25" width="0.0">
+                                            <color>
+                                                <Color red="0.7300000190734863" green="0.24455000460147858" blue="0.0364999994635582" />
+                                            </color>
+                                        </Shadow>
+                                    </bumpInput>
+                                    <light>
+                                        <Light.Distant>
+                                            <color>
+                                                <Color red="0.9680555462837219" green="1.0" blue="0.3611111044883728" opacity="0.699999988079071" />
+                                            </color>
+                                        </Light.Distant>
+                                    </light>
+                                </Lighting>
+                            </input>
+                        </InnerShadow>
+                    </effect>
+                </Button>
+            </HBox>
+        </VBox>
+    </center>
+
+</BorderPane>

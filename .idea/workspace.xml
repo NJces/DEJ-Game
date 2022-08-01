@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="187bdba4-b71b-4fbc-97d7-3dea87f451f8" name="Changes" comment="Create sample menu">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/Menu.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/DejBG.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/MenuBG.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/GameInit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/GameInit.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/DownFlash.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/Player.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/UpFlash.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/submit.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/Menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/Menu.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +53,11 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\rayanmarket\Desktop\DEJ-Game\src\main\resources\Image" />
+      <recent name="C:\Users\rayanmarket\Desktop\DEJ-Game\src\main\resources\FXML" />
       <recent name="C:\Users\rayanmarket\Desktop\DEJ-Game\src\main\resources\Font" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\rayanmarket\Desktop\DEJ-Game\src\main\resources\Image\BG" />
     </key>
   </component>
   <component name="RunManager">
@@ -77,6 +83,14 @@
       <option name="presentableId" value="Default" />
       <updated>1659178888899</updated>
     </task>
+    <task id="LOCAL-00001" summary="Create sample menu">
+      <created>1659266261598</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1659266261598</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
