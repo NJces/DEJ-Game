@@ -10,7 +10,7 @@
 
 <BorderPane nodeOrientation="RIGHT_TO_LEFT" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.GameInit">
     <center>
-        <VBox spacing="20" style="-fx-padding: 50 10 10 10; -fx-background-color: beige;">
+        <VBox spacing="20" style="-fx-padding: 50 10 10 10; -fx-background-color: beige; -fx-background-radius: 100">
             <HBox spacing="10">
                 <Label prefHeight="29.0" prefWidth="37.0" textFill="#842c00">
                <effect>
