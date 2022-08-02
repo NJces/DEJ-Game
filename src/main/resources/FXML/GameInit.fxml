@@ -89,7 +89,7 @@
                     </effect>
                 </Button>
             </HBox>
-            <GridPane fx:id="playerListGp" vgap="7" hgap="3"/>
+            <VBox fx:id="playerListVb" spacing="10" alignment="CENTER"/>
             <Button fx:id="startGameBtn" text="شروع بازی" alignment="CENTER" cache="true" prefHeight="25.0" prefWidth="80.0" style="-fx-background-radius: 10;">
                 <cursor>
                     <Cursor fx:constant="DEFAULT" />
