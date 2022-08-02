@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane nodeOrientation="RIGHT_TO_LEFT" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+    <HBox fx:id="info" spacing="10" style="-fx-padding: 20">
+        <Label fx:id="code" style="-fx-background-color: brown; -fx-background-insets: -2; -fx-background-radius: 10; -fx-border-color: red; -fx-border-insets: 2; -fx-border-radius: 10;" text="#1" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+        <TextField fx:id="name" prefHeight="25.0" prefWidth="90.0" promptText="نام..." style="-fx-background-color: CHOCOLATE; -fx-background-insets: 10; -fx-background-radius: 20; -fx-border-color: red; -fx-border-width: 5; -fx-border-insets: 0; -fx-border-radius: 20;" />
+        <TextField fx:id="age" prefHeight="25.0" prefWidth="50.0" promptText="سن..." style="-fx-background-color: CHOCOLATE; -fx-background-insets: 10; -fx-background-radius: 20; -fx-border-color: brown; -fx-border-insets: 5; -fx-border-radius: 20;" />
+        <Button fx:id="submitBtn" nodeOrientation="LEFT_TO_RIGHT" text="تایید">
+         <effect>
+            <ImageInput x="10.0" y="10.0">
+               <source>
+                  <Image url="/Image/submit.png" />
+               </source>
+            </ImageInput>
+         </effect></Button>
+    </HBox>
+
+</AnchorPane>

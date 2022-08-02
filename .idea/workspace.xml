@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="187bdba4-b71b-4fbc-97d7-3dea87f451f8" name="Changes" comment="create a sample class of player">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/PlayerInfo.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/submit02.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GameInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GameInit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/GameInit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/GameInit.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659361906795</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="create a sample class of player">
+      <created>1659425366274</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1659425366274</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

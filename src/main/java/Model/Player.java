@@ -10,10 +10,13 @@ public class Player {
     //private ArrayList<CityStructure> cityStructures = new ArrayList<CityStructure>();
     private Source source;
 
-    public Player(String name, int age) {
+    public Player() {
+        code = "#" + (++number);
+    }
+
+    public void init(String name, int age) {
         this.name = name;
         this.age = age;
-        code = "#" + (++number);
 
         //At the beginning of the game, each player gets 2 coins and 4 cards in a random.
         //source = new Source(2, Game.getStructureCards(4));
