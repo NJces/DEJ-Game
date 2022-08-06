@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="187bdba4-b71b-4fbc-97d7-3dea87f451f8" name="Changes" comment="fixed the problem of GameInit(fxml) in show playerList">
+    <list default="true" id="187bdba4-b71b-4fbc-97d7-3dea87f451f8" name="Changes" comment="set action for startBtn(GameInit page)">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Role.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GameInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GameInit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/GameInit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/GameInit.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/PlayerInfo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/PlayerInfo.fxml" afterDir="false" />
     </list>
@@ -20,6 +21,7 @@
       <list>
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -135,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659438699569</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="set action for startBtn(GameInit page)">
+      <created>1659783250709</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1659783250709</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -158,7 +167,8 @@
     <MESSAGE value="create a sample class of player" />
     <MESSAGE value="fixed Show List of Players &amp; saving info" />
     <MESSAGE value="fixed the problem of GameInit(fxml) in show playerList" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed the problem of GameInit(fxml) in show playerList" />
+    <MESSAGE value="set action for startBtn(GameInit page)" />
+    <option name="LAST_COMMIT_MESSAGE" value="set action for startBtn(GameInit page)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

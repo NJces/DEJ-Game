@@ -6,7 +6,7 @@ public class Player {
     private String name, code;
     private static int number = 0;
     private int age;
-    //private Role[] roles;
+    private Role[] roles;
     //private ArrayList<CityStructure> cityStructures = new ArrayList<CityStructure>();
     private Source source;
 
