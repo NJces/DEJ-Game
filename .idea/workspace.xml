@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="187bdba4-b71b-4fbc-97d7-3dea87f451f8" name="Changes" comment="fixed Show List of Players &amp; saving info">
+    <list default="true" id="187bdba4-b71b-4fbc-97d7-3dea87f451f8" name="Changes" comment="fixed the problem of GameInit(fxml) in show playerList">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GameInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GameInit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/GameInit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/GameInit.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/PlayerInfo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/PlayerInfo.fxml" afterDir="false" />
     </list>
@@ -127,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659437944229</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fixed the problem of GameInit(fxml) in show playerList">
+      <created>1659438699569</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1659438699569</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -149,7 +157,8 @@
     <MESSAGE value="fixed the problem on startBtn action" />
     <MESSAGE value="create a sample class of player" />
     <MESSAGE value="fixed Show List of Players &amp; saving info" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed Show List of Players &amp; saving info" />
+    <MESSAGE value="fixed the problem of GameInit(fxml) in show playerList" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed the problem of GameInit(fxml) in show playerList" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

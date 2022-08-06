@@ -31,10 +31,12 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class GameInit implements Initializable {
+
     private int playersNum;
     private ArrayList<Player> players = new ArrayList<>();
-    private Pane playerInfo;
 
+    @FXML
+    private VBox pageVb;
     @FXML
     private VBox playerListVb;
     @FXML
@@ -200,5 +202,31 @@ public class GameInit implements Initializable {
             }
         }
         return (text.equals("")) ? false : true;
+    }
+
+    public void startGame(ActionEvent actionEvent) {
+
+        if (playersNum == 0) {
+            actionEvent.consume();
+            startGameBtn.setStyle("-fx-background-color:  MAGENTA; -fx-background-radius: 10");
+        }
+        else if (!checkEnteredPlayersInfo()) {
+            actionEvent.consume();
+            startGameBtn.setStyle("-fx-background-color:  MAGENTA; -fx-background-radius: 10");
+        }
+        else  {
+            startGameBtn.setStyle("-fx-background-color:  LAWNGREEN; -fx-background-radius: 10");
+        }
+
+    }
+
+    private boolean checkEnteredPlayersInfo() {
+        for (int i = 0; i < playersNum; i ++) {
+            HBox info = (HBox) playerListVb.getChildren().get(i);
+            if (info.getChildren().get(3).isVisible()) {
+                return false;
+            }
+        }
+        return true;
     }
 }

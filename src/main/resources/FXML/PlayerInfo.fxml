@@ -18,7 +18,7 @@
          <effect>
             <ImageInput x="10.0" y="10.0">
                <source>
-                  <Image url="/Image/submit.png" />
+                  <Image url="/Image/submit02.png" />
                </source>
             </ImageInput>
          </effect></Button>
