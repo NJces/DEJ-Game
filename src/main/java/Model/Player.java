@@ -38,31 +38,50 @@ public class Player {
 
     private class Source {
         private int coins;
-        //private ArrayList<StructureCard> structureCards = new ArrayList<StructureCard>();
-        /*
-        public Source(int coins, StructureCard...structureCards) {
+        private ArrayList<StructureCard> structureCards = new ArrayList<StructureCard>();
+
+        public Source(int coins, ArrayList<StructureCard> structureCards) {
             this.coins = coins;
             this.structureCards = structureCards;
         }
-         */
 
-        private void addCoins(int number) {
+
+        public void addCoins(int number) {
             coins += number;
         }
 
-        private void subtractCoins(int number) {
+        public void subtractCoins(int number) {
             coins -= number;
         }
 
-        private int stolenCoins() {
+        public int stolenCoins() {
             int curentCoins = coins;
             coins = 0;
             return curentCoins;
         }
 
-        //add card
-        //subtract card
-        //stolen/change cards
+        public void addCards(StructureCard... cards) {
+            for (StructureCard card : cards) {
+                structureCards.add(card);
+            }
+        }
 
+        private void removeCards(StructureCard... cards) {
+            for (StructureCard card : cards) {
+                structureCards.remove(card);
+            }
+        }
+
+        public ArrayList<StructureCard> StolenCards() {
+            ArrayList<StructureCard> list = structureCards;
+            structureCards = new ArrayList<>();
+            return list;
+        }
+
+        public ArrayList<StructureCard> changedCards(ArrayList<StructureCard> cards) {
+            ArrayList<StructureCard> list = structureCards;
+            structureCards = cards;
+            return list;
+        }
     }
 }
