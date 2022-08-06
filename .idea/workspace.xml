@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="187bdba4-b71b-4fbc-97d7-3dea87f451f8" name="Changes" comment="create Role enum for role cards">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/StructureCard.java" afterDir="false" />
+    <list default="true" id="187bdba4-b71b-4fbc-97d7-3dea87f451f8" name="Changes" comment="create structureCard class &amp; Apply this change to the player class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/StructureCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/StructureCard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/GameInit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/GameInit.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/PlayerInfo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/PlayerInfo.fxml" afterDir="false" />
     </list>
@@ -151,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659785016846</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="create structureCard class &amp; Apply this change to the player class">
+      <created>1659791515437</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1659791515437</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -176,7 +182,8 @@
     <MESSAGE value="fixed the problem of GameInit(fxml) in show playerList" />
     <MESSAGE value="set action for startBtn(GameInit page)" />
     <MESSAGE value="create Role enum for role cards" />
-    <option name="LAST_COMMIT_MESSAGE" value="create Role enum for role cards" />
+    <MESSAGE value="create structureCard class &amp; Apply this change to the player class" />
+    <option name="LAST_COMMIT_MESSAGE" value="create structureCard class &amp; Apply this change to the player class" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

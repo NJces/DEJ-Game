@@ -2,6 +2,9 @@ package Model;
 
 import javafx.scene.effect.ImageInput;
 
+import java.util.Random;
+import java.util.Stack;
+
 public class StructureCard {
     private String type, name;
     private ColorOfGame color;
@@ -95,6 +98,89 @@ public class StructureCard {
 
     public ImageInput getImage() {
         return image;
+    }
+
+    public static Stack<StructureCard> initStructureCardList() {
+        Stack<StructureCard> cards = new Stack<>();
+
+        cards.push(new StructureCard("", "Specific"));
+        cards.push(new StructureCard("", "Specific"));
+        cards.push(new StructureCard("", "Specific"));
+        cards.push(new StructureCard("", "Specific"));
+        cards.push(new StructureCard("", "Specific"));
+        cards.push(new StructureCard("", "Specific"));
+        cards.push(new StructureCard("", "Specific"));
+
+        cards.push(new StructureCard("", "Military"));
+        cards.push(new StructureCard("", "Military"));
+        cards.push(new StructureCard("", "Military"));
+        cards.push(new StructureCard("", "Military"));
+        cards.push(new StructureCard("", "Military"));
+        cards.push(new StructureCard("", "Military"));
+        cards.push(new StructureCard("", "Military"));
+        cards.push(new StructureCard("", "Military"));
+        cards.push(new StructureCard("", "Military"));
+        cards.push(new StructureCard("", "Military"));
+        cards.push(new StructureCard("", "Military"));
+
+        cards.push(new StructureCard("", "Commercial"));
+        cards.push(new StructureCard("", "Commercial"));
+        cards.push(new StructureCard("", "Commercial"));
+        cards.push(new StructureCard("", "Commercial"));
+        cards.push(new StructureCard("", "Commercial"));
+        cards.push(new StructureCard("", "Commercial"));
+        cards.push(new StructureCard("", "Commercial"));
+        cards.push(new StructureCard("", "Commercial"));
+        cards.push(new StructureCard("", "Commercial"));
+        cards.push(new StructureCard("", "Commercial"));
+        cards.push(new StructureCard("", "Commercial"));
+        cards.push(new StructureCard("", "Commercial"));
+        cards.push(new StructureCard("", "Commercial"));
+        cards.push(new StructureCard("", "Commercial"));
+        cards.push(new StructureCard("", "Commercial"));
+        cards.push(new StructureCard("", "Commercial"));
+        cards.push(new StructureCard("", "Commercial"));
+        cards.push(new StructureCard("", "Commercial"));
+        cards.push(new StructureCard("", "Commercial"));
+        cards.push(new StructureCard("", "Commercial"));
+
+        cards.push(new StructureCard("", "Ritual"));
+        cards.push(new StructureCard("", "Ritual"));
+        cards.push(new StructureCard("", "Ritual"));
+        cards.push(new StructureCard("", "Ritual"));
+        cards.push(new StructureCard("", "Ritual"));
+        cards.push(new StructureCard("", "Ritual"));
+        cards.push(new StructureCard("", "Ritual"));
+        cards.push(new StructureCard("", "Ritual"));
+        cards.push(new StructureCard("", "Ritual"));
+        cards.push(new StructureCard("", "Ritual"));
+        cards.push(new StructureCard("", "Ritual"));
+
+        cards.push(new StructureCard("", "Royal"));
+        cards.push(new StructureCard("", "Royal"));
+        cards.push(new StructureCard("", "Royal"));
+        cards.push(new StructureCard("", "Royal"));
+        cards.push(new StructureCard("", "Royal"));
+        cards.push(new StructureCard("", "Royal"));
+        cards.push(new StructureCard("", "Royal"));
+        cards.push(new StructureCard("", "Royal"));
+        cards.push(new StructureCard("", "Royal"));
+        cards.push(new StructureCard("", "Royal"));
+        cards.push(new StructureCard("", "Royal"));
+        cards.push(new StructureCard("", "Royal"));
+
+
+        return cards;
+    }
+
+    public static void randomShuffling(Stack<StructureCard> cards) {
+        Random rand = new Random();  // Random value generator
+        for (int i=0; i<cards.size(); i++) {
+            int randomIndex = rand.nextInt(cards.size());
+            StructureCard temp = cards.get(i);
+            cards.set(i, cards.get(randomIndex));
+            cards.set(randomIndex, temp);
+        }
     }
 }
 
