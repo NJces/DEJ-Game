@@ -9,6 +9,7 @@ public class Player {
     private Role[] roles;
     private ArrayList<StructureCard> cityStructures = new ArrayList<>();
     private Source source;
+    private boolean crown;
 
     public Player() {
         code = "#" + (++number);
@@ -17,7 +18,6 @@ public class Player {
     public void init(String name, int age) {
         this.name = name;
         this.age = age;
-
 
     }
 
@@ -32,6 +32,22 @@ public class Player {
 
     public int getAge() {
         return age;
+    }
+
+    public boolean getCrown() {
+        return crown;
+    }
+
+    public void setCrown() {
+        crown = true;
+    }
+
+    public void lossCrown() {
+        crown = false;
+    }
+
+    public int getNumOfCoins() {
+        return source.coins;
     }
 
     public void setSource(int coins, ArrayList<StructureCard> cards) {
@@ -75,7 +91,7 @@ public class Player {
             }
         }
 
-        public ArrayList<StructureCard> StolenCards() {
+        public ArrayList<StructureCard> stolenCards() {
             ArrayList<StructureCard> list = structureCards;
             structureCards = new ArrayList<>();
             return list;
@@ -89,8 +105,27 @@ public class Player {
     }
 
     public void structCard(StructureCard card) {
-        cityStructures.add(card);
-        source.removeCards(card);
+        if (card.getCost() <= source.coins) {
+            source.subtractCoins(card.getCost());
+            cityStructures.add(card);
+            source.removeCards(card);
+        }
+    }
+
+    public void destructCard(StructureCard card) {
+        cityStructures.remove(card);
+    }
+
+    public void getCards(StructureCard... cards) {
+        source.addCards(cards);
+    }
+
+    public ArrayList<StructureCard> stolenCards() {
+        return source.stolenCards();
+    }
+
+    public ArrayList<StructureCard> changedCards(ArrayList<StructureCard> cards) {
+        return source.changedCards(cards);
     }
 
     public boolean hasRole(Role role) {
@@ -100,5 +135,17 @@ public class Player {
             }
         }
         return false;
+    }
+
+    public int stolenCoins() {
+        return source.stolenCoins();
+    }
+
+    public void getCoins(int number) {
+        source.addCoins(number);
+    }
+
+    public void giveCoins(int number) {
+        source.subtractCoins(number);
     }
 }

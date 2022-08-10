@@ -9,6 +9,7 @@ public class StructureCard {
     private String type, name;
     private ColorOfGame color;
     private ImageInput image;
+    private int cost;
 
 
     public StructureCard(String name, String type) {
@@ -98,6 +99,10 @@ public class StructureCard {
 
     public ImageInput getImage() {
         return image;
+    }
+
+    public int getCost() {
+        return cost;
     }
 
     public static Stack<StructureCard> initStructureCardList() {

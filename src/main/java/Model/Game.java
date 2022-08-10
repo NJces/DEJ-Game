@@ -71,4 +71,37 @@ public class Game {
         }
         return false;
     }
+
+    public boolean magic(Role target) {
+        target.magic();
+        return true;
+    }
+
+    public boolean coronation(Player newKing) {
+        for (Player player : players) {
+            if (player.getCrown()) {
+                player.lossCrown();
+            }
+        }
+        newKing.setCrown();
+        return true;
+    }
+
+    public boolean trader(Player trader) {
+        coins --;
+        trader.getCoins(1);
+        return true;
+    }
+
+    public boolean commander(Player commander, Player target, StructureCard targetCard) {
+        if (!target.hasRole(Role.Doctor) && commander.getNumOfCoins() >= targetCard.getCost()-1) {
+            target.giveCoins(targetCard.getCost()-1);
+            target.destructCard(targetCard);
+            return true;
+        }
+        return false;
+    }
+    //--------roles----------//
+
+
 }

@@ -16,7 +16,7 @@ public enum Role {
 
     private int number;
     private String color;
-    private boolean isDead, isRobbed;
+    private boolean isDead, isRobbed, isMagic;
 
     Role(int number, String color) {
         this.number = number;
@@ -41,12 +41,24 @@ public enum Role {
         return isRobbed;
     }
 
+    public boolean isMagic() {return isMagic; }
+
     public void kill() {
         isDead = true;
     }
 
     public void steal() {
         isRobbed = true;
+    }
+
+    public void magic() {
+        isMagic = true;
+    }
+
+    public void returnAll() {
+        isMagic = false;
+        isRobbed = false;
+        isDead = false;
     }
 
     public static void initRoles(ArrayList<Role> roles) {
