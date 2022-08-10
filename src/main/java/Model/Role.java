@@ -41,6 +41,14 @@ public enum Role {
         return isRobbed;
     }
 
+    public void kill() {
+        isDead = true;
+    }
+
+    public void steal() {
+        isRobbed = true;
+    }
+
     public static void initRoles(ArrayList<Role> roles) {
         for (Role role : Role.values()) {
             roles.add(role);
@@ -55,6 +63,17 @@ public enum Role {
             roles.set(i, roles.get(randomIndex));
             roles.set(randomIndex, temp);
         }
+    }
+
+    public static Role nextRole(Role curentRole) {
+        if (curentRole.number < 8) {
+            for (Role role : Role.values()) {
+                if (role.number == curentRole.number) {
+                    return role;
+                }
+            }
+        }
+        return null;
     }
 }
 

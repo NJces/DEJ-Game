@@ -92,4 +92,13 @@ public class Player {
         cityStructures.add(card);
         source.removeCards(card);
     }
+
+    public boolean hasRole(Role role) {
+        for (Role r : roles) {
+            if (r.equals(role)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

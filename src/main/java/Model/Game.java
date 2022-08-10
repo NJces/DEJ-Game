@@ -8,6 +8,7 @@ public class Game {
     private Stack<StructureCard> cards = new Stack<>();
     private ArrayList<Role> roles = new ArrayList<>();
     private int coins;
+    private Role curentTurn;
 
     public Game(ArrayList<Player> players) {
         this.players = players;
@@ -24,6 +25,7 @@ public class Game {
         StructureCard.randomShuffling(cards);
         coins = 25;
         setSource();
+        curentTurn = Role.Killer;
     }
 
     /**
@@ -38,5 +40,35 @@ public class Game {
             cards.add(this.cards.pop());
             player.setSource(2, cards);
         }
+    }
+
+
+    public Player nextTurn() {
+        curentTurn = Role.nextRole(curentTurn);
+        return searchPlayerByRole(curentTurn);
+    }
+
+    private Player searchPlayerByRole(Role role) {
+        for (Player player : players) {
+            if (player.hasRole(role) && !role.isDead()) {
+                return player;
+            }
+        }
+        return null;
+    }
+
+
+    //--------roles----------//
+    public boolean kill(Role target) {
+        target.kill();
+        return true;
+    }
+
+    public boolean steal(Role target) {
+        if (!target.equals(Role.Killer) && !target.isDead()) {
+            target.steal();
+            return true;
+        }
+        return false;
     }
 }
