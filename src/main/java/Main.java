@@ -1,3 +1,4 @@
+import Controller.Menu;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -13,6 +14,7 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         primaryStage.setTitle("DEJ-Game");
         primaryStage.show();
+        Menu.stage = primaryStage;
 
     }
 

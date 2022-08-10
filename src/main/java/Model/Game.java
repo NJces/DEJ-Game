@@ -42,6 +42,10 @@ public class Game {
         }
     }
 
+    public ArrayList<Player> getPlayers() {
+        return players;
+    }
+
 
     public Player nextTurn() {
         curentTurn = Role.nextRole(curentTurn);

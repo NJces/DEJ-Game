@@ -1,30 +1,27 @@
 package Controller;
 
+import Model.Game;
 import Model.Player;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.NodeOrientation;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.ImageInput;
 import javafx.scene.image.Image;
-import javafx.scene.input.MouseDragEvent;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
 
-import javax.xml.soap.Text;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -34,6 +31,8 @@ public class GameInit implements Initializable {
 
     private int playersNum;
     private ArrayList<Player> players = new ArrayList<>();
+    public static Game game;
+    public static Stage formerStage;
 
     @FXML
     private VBox pageVb;
@@ -204,7 +203,7 @@ public class GameInit implements Initializable {
         return (text.equals("")) ? false : true;
     }
 
-    public void startGame(ActionEvent actionEvent) {
+    public void startGame(ActionEvent actionEvent) throws IOException {
 
         if (playersNum == 0) {
             actionEvent.consume();
@@ -216,6 +215,15 @@ public class GameInit implements Initializable {
         }
         else  {
             startGameBtn.setStyle("-fx-background-color:  LAWNGREEN; -fx-background-radius: 10");
+            game = new Game(players);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/GamePage.fxml"));
+            Pane gamePage = loader.load();
+            Scene scene = new Scene(gamePage);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.setTitle("بازی دژ");
+            stage.show();
+            formerStage.close();
         }
 
     }
