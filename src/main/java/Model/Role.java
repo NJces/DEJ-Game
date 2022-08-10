@@ -1,5 +1,9 @@
 package Model;
 
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.Stack;
+
 public enum Role {
     Killer(1, ColorOfGame.Non.name()),
     Robber(2, ColorOfGame.Non.name()),
@@ -35,6 +39,22 @@ public enum Role {
 
     public boolean isRobbed() {
         return isRobbed;
+    }
+
+    public static void initRoles(ArrayList<Role> roles) {
+        for (Role role : Role.values()) {
+            roles.add(role);
+        }
+    }
+
+    public static void randomShuffling(ArrayList<Role> roles) {
+        Random rand = new Random();  // Random value generator
+        for (int i=0; i<roles.size(); i++) {
+            int randomIndex = rand.nextInt(roles.size());
+            Role temp = roles.get(i);
+            roles.set(i, roles.get(randomIndex));
+            roles.set(randomIndex, temp);
+        }
     }
 }
 

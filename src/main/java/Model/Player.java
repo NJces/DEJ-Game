@@ -7,7 +7,7 @@ public class Player {
     private static int number = 0;
     private int age;
     private Role[] roles;
-    //private ArrayList<CityStructure> cityStructures = new ArrayList<CityStructure>();
+    private ArrayList<StructureCard> cityStructures = new ArrayList<>();
     private Source source;
 
     public Player() {
@@ -18,8 +18,7 @@ public class Player {
         this.name = name;
         this.age = age;
 
-        //At the beginning of the game, each player gets 2 coins and 4 cards in a random.
-        //source = new Source(2, Game.getStructureCards(4));
+
     }
 
 
@@ -35,10 +34,14 @@ public class Player {
         return age;
     }
 
+    public void setSource(int coins, ArrayList<StructureCard> cards) {
+        this.source = new Source(coins, cards);
+    }
+
 
     private class Source {
         private int coins;
-        private ArrayList<StructureCard> structureCards = new ArrayList<StructureCard>();
+        private ArrayList<StructureCard> structureCards = new ArrayList<>();
 
         public Source(int coins, ArrayList<StructureCard> structureCards) {
             this.coins = coins;
@@ -83,5 +86,10 @@ public class Player {
             structureCards = cards;
             return list;
         }
+    }
+
+    public void structCard(StructureCard card) {
+        cityStructures.add(card);
+        source.removeCards(card);
     }
 }
