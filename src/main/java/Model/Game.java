@@ -26,6 +26,7 @@ public class Game {
         coins = 25;
         setSource();
         curentTurn = Role.Killer;
+        setSource();
     }
 
     /**
@@ -40,6 +41,28 @@ public class Game {
             cards.add(this.cards.pop());
             player.setSource(2, cards);
         }
+    }
+
+    private void setCrown() {
+        Player olderPlayer = findOlderPlayer();
+        olderPlayer.setCrown();
+    }
+
+    private Player findOlderPlayer() {
+        int maxAge = 0;
+        for (Player player : players) {
+            if (player.getAge() >= maxAge) {
+                maxAge = player.getAge();
+            }
+        }
+
+        for (Player player : players) {
+            if (player.getAge() == maxAge) {
+                return player;
+            }
+        }
+
+        return null;
     }
 
     public ArrayList<Player> getPlayers() {
