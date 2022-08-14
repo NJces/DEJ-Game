@@ -6,9 +6,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.effect.ImageInput;
+import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -34,6 +35,20 @@ public class GamePage implements Initializable {
 
 
             Button info = new Button();
+            Image crownPng = new Image("/Image/Crown.png");
+            Image infoPng = new Image("/Image/Info.png");
+            ImageInput imageInput = new ImageInput();
+            if (player.getCrown()) {
+                imageInput.setSource(crownPng);
+                imageInput.setY(-10);
+                imageInput.setX(-15);
+            }
+            else {
+                imageInput.setSource(infoPng);
+                imageInput.setY(-3);
+                imageInput.setX(-5);
+            }
+            info.setEffect(imageInput);
 
             Label name = new Label(player.getName());
 

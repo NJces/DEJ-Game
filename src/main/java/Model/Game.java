@@ -26,7 +26,7 @@ public class Game {
         coins = 25;
         setSource();
         curentTurn = Role.Killer;
-        setSource();
+        setCrown();
     }
 
     /**

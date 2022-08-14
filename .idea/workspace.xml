@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="187bdba4-b71b-4fbc-97d7-3dea87f451f8" name="Changes" comment="create loop of game">
+    <list default="true" id="187bdba4-b71b-4fbc-97d7-3dea87f451f8" name="Changes" comment="make set crown in start of the game">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/Crown.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/Info.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GamePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GamePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/GameInit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/GameInit.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/GamePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/GamePage.fxml" afterDir="false" />
@@ -200,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660458293434</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="make set crown in start of the game">
+      <created>1660459169650</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1660459169650</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -232,7 +242,8 @@
     <MESSAGE value="complete method of roles &amp; player class" />
     <MESSAGE value="fixed sample Game page" />
     <MESSAGE value="create loop of game" />
-    <option name="LAST_COMMIT_MESSAGE" value="create loop of game" />
+    <MESSAGE value="make set crown in start of the game" />
+    <option name="LAST_COMMIT_MESSAGE" value="make set crown in start of the game" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
