@@ -48,4 +48,23 @@ public class GamePage implements Initializable {
         ArrayList<HBox> list = createPlayerList();
         playersList.getChildren().addAll(list);
     }
+
+    public void start() {
+        while (!isFinished()) {
+            //play game
+        }
+    }
+
+    private boolean isFinished() {
+        int playersNum = game.getPlayers().size();
+        for (Player player : game.getPlayers()) {
+            if (playersNum <= 3 && player.getCityStructuresSize() >= 8) {
+                return true;
+            }
+            else if(playersNum <= 7 && player.getCityStructuresSize() >= 7) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

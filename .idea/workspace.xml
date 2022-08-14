@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="187bdba4-b71b-4fbc-97d7-3dea87f451f8" name="Changes" comment="complete method of roles &amp; player class">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/GamePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXML/GamePage.fxml" afterDir="false" />
+    <list default="true" id="187bdba4-b71b-4fbc-97d7-3dea87f451f8" name="Changes" comment="fixed sample Game page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GameInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GameInit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GamePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GamePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/GameInit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/GameInit.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/GamePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/GamePage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/PlayerInfo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/PlayerInfo.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -190,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660131505739</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="fixed sample Game page">
+      <created>1660135803718</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1660135803718</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -220,7 +224,8 @@
     <MESSAGE value="create game class for save GameInfo &amp; complete player class" />
     <MESSAGE value="set next turn and method of role 1, 2" />
     <MESSAGE value="complete method of roles &amp; player class" />
-    <option name="LAST_COMMIT_MESSAGE" value="complete method of roles &amp; player class" />
+    <MESSAGE value="fixed sample Game page" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed sample Game page" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

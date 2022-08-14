@@ -7,6 +7,8 @@ public class Player {
     private static int number = 0;
     private int age;
     private Role[] roles;
+
+
     private ArrayList<StructureCard> cityStructures = new ArrayList<>();
     private Source source;
     private boolean crown;
@@ -48,6 +50,10 @@ public class Player {
 
     public int getNumOfCoins() {
         return source.coins;
+    }
+
+    public int getCityStructuresSize() {
+        return cityStructures.size();
     }
 
     public void setSource(int coins, ArrayList<StructureCard> cards) {
