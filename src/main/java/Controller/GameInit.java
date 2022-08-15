@@ -33,6 +33,7 @@ public class GameInit implements Initializable {
     private ArrayList<Player> players = new ArrayList<>();
     public static Game game;
     public static Stage formerStage;
+    private boolean showPlayerList = false;
 
     @FXML
     private VBox pageVb;
@@ -77,70 +78,71 @@ public class GameInit implements Initializable {
     }
 
     public void showPlayerList(ActionEvent actionEvent) {
-        upFlash.setSource(new Image("/Image/RedUpFlash.png"));
-        downFlash.setSource(new Image("/Image/RedDownFlash.png"));
-        playersNum = player_NumTxt.getText().charAt(0) - '0';
-        showList();
+        if(!showPlayerList) {
+            showPlayerList = true;
+            upFlash.setSource(new Image("/Image/RedUpFlash.png"));
+            downFlash.setSource(new Image("/Image/RedDownFlash.png"));
+            playersNum = player_NumTxt.getText().charAt(0) - '0';
+            showList();
 
-        for (int i = 0; i < playersNum; i ++) {
-            Player player = players.get(i);
-            HBox hBox = (HBox)playerListVb.getChildren().get(i);
-            TextField name = (TextField)hBox.getChildren().get(1);
-            TextField age = (TextField) hBox.getChildren().get(2);
-            hBox.getChildren().add(new Label());
-            ((Button)hBox.getChildren().get(3)).addEventHandler(ActionEvent.ACTION, new EventHandler<ActionEvent>() {
-                @Override
-                public void handle(ActionEvent event) {
-                    if (name.getText().equals("")) {
-                        name.setStyle("-fx-background-color: CHOCOLATE; -fx-background-insets: 10; -fx-background-radius: 20; -fx-border-color: red; -fx-border-width: 5; -fx-border-insets: 0; -fx-border-radius: 20;");
-                        Label error = new Label();
-                        error.setText("لطفا نام بازیکن را انتخاب کنید!");
-                        error.setTextFill(Color.RED);
-                        hBox.getChildren().set(4, error);
-                    }
-                    else if (age.getText().equals("")) {
-                        age.setStyle("-fx-background-color: CHOCOLATE; -fx-background-insets: 10; -fx-background-radius: 20; -fx-border-color: red; -fx-border-width: 5; -fx-border-insets: 0; -fx-border-radius: 20;");
-                        Label error = new Label();
-                        error.setText("لطفا سن بازیکن را انتخاب کنید!");
-                        error.setTextFill(Color.RED);
-                        hBox.getChildren().set(4, error);
-                    }
-                    else {
-                        age.setStyle("-fx-background-color: CHOCOLATE; -fx-background-insets: 10; -fx-background-radius: 20; -fx-border-color: red; -fx-border-width: 5; -fx-border-insets: 0; -fx-border-radius: 20;");
-                        Label error = new Label();
-                        error.setText("فرمت نامعتبر است!!");
-                        error.setTextFill(Color.RED);
-                        hBox.getChildren().set(4, error);
-                    }
-                    if(!name.getText().equals("")) {
-                        name.setStyle("-fx-background-color: CHOCOLATE; -fx-background-insets: 10; -fx-background-radius: 20; -fx-border-color: brown; -fx-border-insets: 5; -fx-border-radius: 20;");
-                        if (((Label)hBox.getChildren().get(4)).getText().equals("لطفا نام بازیکن را انتخاب کنید!")) {
-                            ((Label)hBox.getChildren().get(4)).setText("");
+            for (int i = 0; i < playersNum; i++) {
+                Player player = players.get(i);
+                HBox hBox = (HBox) playerListVb.getChildren().get(i);
+                TextField name = (TextField) hBox.getChildren().get(1);
+                TextField age = (TextField) hBox.getChildren().get(2);
+                hBox.getChildren().add(new Label());
+                ((Button) hBox.getChildren().get(3)).addEventHandler(ActionEvent.ACTION, new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent event) {
+                        if (name.getText().equals("")) {
+                            name.setStyle("-fx-background-color: CHOCOLATE; -fx-background-insets: 10; -fx-background-radius: 20; -fx-border-color: red; -fx-border-width: 5; -fx-border-insets: 0; -fx-border-radius: 20;");
+                            Label error = new Label();
+                            error.setText("لطفا نام بازیکن را انتخاب کنید!");
+                            error.setTextFill(Color.RED);
+                            hBox.getChildren().set(4, error);
+                        } else if (age.getText().equals("")) {
+                            age.setStyle("-fx-background-color: CHOCOLATE; -fx-background-insets: 10; -fx-background-radius: 20; -fx-border-color: red; -fx-border-width: 5; -fx-border-insets: 0; -fx-border-radius: 20;");
+                            Label error = new Label();
+                            error.setText("لطفا سن بازیکن را انتخاب کنید!");
+                            error.setTextFill(Color.RED);
+                            hBox.getChildren().set(4, error);
+                        } else {
+                            age.setStyle("-fx-background-color: CHOCOLATE; -fx-background-insets: 10; -fx-background-radius: 20; -fx-border-color: red; -fx-border-width: 5; -fx-border-insets: 0; -fx-border-radius: 20;");
+                            Label error = new Label();
+                            error.setText("فرمت نامعتبر است!!");
+                            error.setTextFill(Color.RED);
+                            hBox.getChildren().set(4, error);
                         }
-                    }
-
-                    if(!age.getText().equals("")) {
-                        age.setStyle("-fx-background-color: CHOCOLATE; -fx-background-insets: 10; -fx-background-radius: 20; -fx-border-color: brown; -fx-border-insets: 5; -fx-border-radius: 20;");
-                        if (((Label)hBox.getChildren().get(4)).getText().equals("لطفا سن بازیکن را انتخاب کنید!")) {
-                            ((Label)hBox.getChildren().get(4)).setText("");
+                        if (!name.getText().equals("")) {
+                            name.setStyle("-fx-background-color: CHOCOLATE; -fx-background-insets: 10; -fx-background-radius: 20; -fx-border-color: brown; -fx-border-insets: 5; -fx-border-radius: 20;");
+                            if (((Label) hBox.getChildren().get(4)).getText().equals("لطفا نام بازیکن را انتخاب کنید!")) {
+                                ((Label) hBox.getChildren().get(4)).setText("");
+                            }
                         }
-                    }
 
-                    if(checkNumberFormat(age.getText())) {
-                        age.setStyle("-fx-background-color: CHOCOLATE; -fx-background-insets: 10; -fx-background-radius: 20; -fx-border-color: brown; -fx-border-insets: 5; -fx-border-radius: 20;");
-                        if (((Label)hBox.getChildren().get(4)).getText().equals("فرمت نامعتبر است!!")) {
-                            ((Label)hBox.getChildren().get(4)).setText("");
+                        if (!age.getText().equals("")) {
+                            age.setStyle("-fx-background-color: CHOCOLATE; -fx-background-insets: 10; -fx-background-radius: 20; -fx-border-color: brown; -fx-border-insets: 5; -fx-border-radius: 20;");
+                            if (((Label) hBox.getChildren().get(4)).getText().equals("لطفا سن بازیکن را انتخاب کنید!")) {
+                                ((Label) hBox.getChildren().get(4)).setText("");
+                            }
                         }
-                    }
 
-                    if (!name.getText().equals("") && !age.getText().equals("") && checkNumberFormat(age.getText())) {
-                        ((Button)hBox.getChildren().get(3)).setVisible(false);
-                        hBox.getChildren().remove(4);
-                        player.init(name.getText(), Integer.parseInt(age.getText()));
-                    }
+                        if (checkNumberFormat(age.getText())) {
+                            age.setStyle("-fx-background-color: CHOCOLATE; -fx-background-insets: 10; -fx-background-radius: 20; -fx-border-color: brown; -fx-border-insets: 5; -fx-border-radius: 20;");
+                            if (((Label) hBox.getChildren().get(4)).getText().equals("فرمت نامعتبر است!!")) {
+                                ((Label) hBox.getChildren().get(4)).setText("");
+                            }
+                        }
 
-                }
-            });
+                        if (!name.getText().equals("") && !age.getText().equals("") && checkNumberFormat(age.getText())) {
+                            ((Button) hBox.getChildren().get(3)).setVisible(false);
+                            hBox.getChildren().remove(4);
+                            player.init(name.getText(), Integer.parseInt(age.getText()));
+                        }
+
+                    }
+                });
+            }
         }
     }
 

@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="187bdba4-b71b-4fbc-97d7-3dea87f451f8" name="Changes" comment="make set crown in start of the game">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/Crown.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/Info.png" afterDir="false" />
+    <list default="true" id="187bdba4-b71b-4fbc-97d7-3dea87f451f8" name="Changes" comment="complete show player list(Game page)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GameInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GameInit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GamePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GamePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/GameInit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/GameInit.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/GamePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/GamePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/PlayerInfo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/PlayerInfo.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +31,13 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="2Cf1a5ZA8166seqBZDLhzDZUqEt" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />

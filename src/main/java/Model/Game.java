@@ -46,6 +46,10 @@ public class Game {
     private void setCrown() {
         Player olderPlayer = findOlderPlayer();
         olderPlayer.setCrown();
+        //set older player at first
+        int olderPlayerIndex = players.indexOf(olderPlayer);
+        players.set(olderPlayerIndex, players.get(0));
+        players.set(0, olderPlayer);
     }
 
     private Player findOlderPlayer() {

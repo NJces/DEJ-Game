@@ -2,6 +2,7 @@ package Controller;
 
 import Model.Game;
 import Model.Player;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -18,13 +19,18 @@ public class GamePage implements Initializable {
 
     private Game game;
 
+    private int playerIndex = 1;
+
     @FXML
     private VBox playersList;
+    @FXML
+    private Label turnTxt;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         game = GameInit.game;
         showList();
+        turnTxt.setText(game.getPlayers().get(0).getName());
     }
 
     private ArrayList<HBox> createPlayerList() {
@@ -81,5 +87,11 @@ public class GamePage implements Initializable {
             }
         }
         return false;
+    }
+
+    public void choseRole(ActionEvent actionEvent) {
+        if (playerIndex < game.getPlayers().size()) {
+            turnTxt.setText(game.getPlayers().get(playerIndex ++).getName());
+        }
     }
 }

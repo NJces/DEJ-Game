@@ -10,6 +10,7 @@
     <top>
         <HBox style="-fx-padding: 20">
             <Label text="نوبت: " />
+            <Label text="" fx:id="turnTxt"/>
         </HBox>
     </top>
 
@@ -35,7 +36,7 @@
 
     <right>
         <HBox style="-fx-padding: 0 10 0 0">
-            <Button text="نقش ها"/>
+            <Button text="نقش ها" onAction="#choseRole"/>
         </HBox>
     </right>
 
