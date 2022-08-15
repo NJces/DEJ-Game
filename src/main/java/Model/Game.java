@@ -9,6 +9,7 @@ public class Game {
     private ArrayList<Role> roles = new ArrayList<>();
     private int coins;
     private Role curentTurn;
+    private Player curentPlayer;
 
     public Game(ArrayList<Player> players) {
         this.players = players;
@@ -25,8 +26,9 @@ public class Game {
         StructureCard.randomShuffling(cards);
         coins = 25;
         setSource();
-        curentTurn = Role.Killer;
         setCrown();
+        curentTurn = Role.Killer;
+        curentPlayer = players.get(0);
     }
 
     /**
@@ -73,6 +75,10 @@ public class Game {
         return players;
     }
 
+    public Player getCurentPlayer() {
+        return curentPlayer;
+    }
+
 
     public Player nextTurn() {
         curentTurn = Role.nextRole(curentTurn);
@@ -86,6 +92,17 @@ public class Game {
             }
         }
         return null;
+    }
+
+    public Player nextPlayer() {
+        int curentPlayerIndex = players.indexOf(curentPlayer);
+        if (curentPlayerIndex < players.size()-1) {
+            curentPlayer = players.get(curentPlayerIndex + 1);
+        }
+        else {
+            curentPlayer = players.get(0);
+        }
+        return curentPlayer;
     }
 
 

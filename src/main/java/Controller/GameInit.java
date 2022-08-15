@@ -60,20 +60,24 @@ public class GameInit implements Initializable {
     }
 
     public void boost(ActionEvent actionEvent) {
-        if (player_NumTxt.getText().charAt(0) < '7') {
-            downFlash.setSource(new Image("/Image/RedDownFlash.png"));
-            upFlash.setSource(new Image("/Image/BlueUpFlash.png"));
-            int number = player_NumTxt.getText().charAt(0) - '0';
-            player_NumTxt.setText(number + 1 + " ");
+        if (!showPlayerList) {
+            if (player_NumTxt.getText().charAt(0) < '7') {
+                downFlash.setSource(new Image("/Image/RedDownFlash.png"));
+                upFlash.setSource(new Image("/Image/BlueUpFlash.png"));
+                int number = player_NumTxt.getText().charAt(0) - '0';
+                player_NumTxt.setText(number + 1 + " ");
+            }
         }
     }
 
     public void radius(ActionEvent actionEvent) {
-        if (player_NumTxt.getText().charAt(0) > '2') {
-            upFlash.setSource(new Image("/Image/RedUpFlash.png"));
-            downFlash.setSource(new Image("/Image/BlueDownFlash.png"));
-            int number = player_NumTxt.getText().charAt(0) - '0';
-            player_NumTxt.setText(number - 1 + " ");
+        if (!showPlayerList) {
+            if (player_NumTxt.getText().charAt(0) > '2') {
+                upFlash.setSource(new Image("/Image/RedUpFlash.png"));
+                downFlash.setSource(new Image("/Image/BlueDownFlash.png"));
+                int number = player_NumTxt.getText().charAt(0) - '0';
+                player_NumTxt.setText(number - 1 + " ");
+            }
         }
     }
 

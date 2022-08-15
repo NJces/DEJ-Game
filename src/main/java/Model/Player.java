@@ -6,7 +6,7 @@ public class Player {
     private String name, code;
     private static int number = 0;
     private int age;
-    private Role[] roles;
+    private ArrayList<Role> roles = new ArrayList<>();
 
 
     private ArrayList<StructureCard> cityStructures = new ArrayList<>();
@@ -153,5 +153,16 @@ public class Player {
 
     public void giveCoins(int number) {
         source.subtractCoins(number);
+    }
+
+    public void setRoles(String roleName) {
+        Role role = Role.findByName(roleName);
+        roles.add(role);
+    }
+
+    public void printRole() {
+        for (Role role : roles) {
+            System.out.println(role.name());
+        }
     }
 }
