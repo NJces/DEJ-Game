@@ -85,7 +85,7 @@ public enum Role {
     public static Role nextRole(Role curentRole) {
         if (curentRole.number < 8) {
             for (Role role : Role.values()) {
-                if (role.number == curentRole.number) {
+                if (role.number == curentRole.number + 1) {
                     return role;
                 }
             }

@@ -47,18 +47,18 @@
         <HBox spacing="100">
             <HBox spacing="30" style="-fx-padding: 0 0 30 30">
                 <HBox spacing="5">
-                    <Label nodeOrientation="LEFT_TO_RIGHT" prefWidth="3.0" text="" visible="false">
+                    <Label nodeOrientation="LEFT_TO_RIGHT" prefWidth="3.0" text="" visible="false" fx:id="sourceCheck">
                   <effect>
                      <ImageInput x="-6.0" y="-2.0">
                         <source>
-                           <Image url="/Image/submit02.png" />
+                           <Image url="/Image/submit02.png"/>
                         </source>
                      </ImageInput>
                   </effect></Label>
                     <Label text="منابع" />
                 </HBox>
                 <HBox spacing="5">
-                    <Label nodeOrientation="LEFT_TO_RIGHT" prefWidth="3.0" text="" visible="false">
+                    <Label nodeOrientation="LEFT_TO_RIGHT" prefWidth="3.0" text="" visible="false" fx:id="roleCheck">
                         <effect>
                             <ImageInput x="-6.0" y="-2.0">
                                 <source>
@@ -69,7 +69,7 @@
                     <Label text="نقش" />
                 </HBox>
                 <HBox spacing="5">
-                    <Label nodeOrientation="LEFT_TO_RIGHT" prefWidth="3.0" text="" visible="false">
+                    <Label nodeOrientation="LEFT_TO_RIGHT" prefWidth="3.0" text="" visible="false" fx:id="structCheck">
                         <effect>
                             <ImageInput x="-6.0" y="-2.0">
                                 <source>
@@ -80,7 +80,7 @@
                     <Label text="ساختن" />
                 </HBox>
             </HBox>
-            <Button text="تایید" />
+            <Button text="تایید" onAction="#submitTurn"/>
         </HBox>
     </bottom>
 

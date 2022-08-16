@@ -165,6 +165,10 @@ public class Player {
         roles.add(role);
     }
 
+    public void finishedAGameLoop() {
+        roles = new ArrayList<>();
+    }
+
     public void printRole() {
         for (Role role : roles) {
             System.out.println(role.name());

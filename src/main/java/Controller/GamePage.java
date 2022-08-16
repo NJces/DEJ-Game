@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.effect.ImageInput;
@@ -27,6 +28,7 @@ import java.util.ResourceBundle;
 public class GamePage implements Initializable {
 
     private Game game;
+    private int playersNum_IsPlayed = 1;
 
     private Stage choseRoleStage;
 
@@ -40,6 +42,12 @@ public class GamePage implements Initializable {
     private Label turnTxt;
     @FXML
     private Label gideTxt;
+    @FXML
+    private Label structCheck;
+    @FXML
+    private Label roleCheck;
+    @FXML
+    private Label sourceCheck;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -97,6 +105,12 @@ public class GamePage implements Initializable {
         playersList.getChildren().addAll(list);
     }
 
+    public void showListAgain() {
+        ArrayList<HBox> list = createPlayerList();
+        playersList.getChildren().remove(0, game.getPlayers().size());
+        playersList.getChildren().addAll(list);
+    }
+
     public void start() {
         while (!isFinished()) {
             //play game
@@ -149,6 +163,7 @@ public class GamePage implements Initializable {
                 String role = game.getCurentTurn().getFarsiName();
                 turnTxt.setText(role + ": " + player.getName());
                 choseRole_iClicked = true;
+                sourceCheck.setVisible(true);
             }
         }
     }
@@ -168,5 +183,55 @@ public class GamePage implements Initializable {
             System.out.println("--------------------");
 
         }
+    }
+
+    public void submitTurn(ActionEvent actionEvent) {
+        if (choseRole_iClicked) {
+            if (checkGameLoopIsFinished()) {
+                if (sourceCheck.isVisible()) {
+                    playersNum_IsPlayed++;
+                    Player player = game.nextTurn();
+                    String role = game.getCurentTurn().getFarsiName();
+                    turnTxt.setText(role + ": " + player.getName());
+                    if (player.getCrown() && !player.hasRole(Role.King) && game.hasKingCardRole()) {
+                        player.lossCrown();
+                    }
+                    if (role.equals(Role.King.getFarsiName())) {
+                        player.setCrown();
+                    }
+                } else {
+                    Alert error = new Alert(Alert.AlertType.ERROR);
+                    error.setHeaderText("برداشت منابع الزامی است!");
+                }
+                System.out.println(playersNum_IsPlayed);
+            }
+            else {
+                //preparing for next game loop
+                gideTxt.setText("اتمام دور بازی، انتخاب نقش");
+                sourceCheck.setVisible(false);
+                roleCheck.setVisible(false);
+                structCheck.setVisible(false);
+                game.finishedAGameLoop();
+                choseRole_iClicked = false;
+                choseRolePage.roles = new ArrayList<>();
+                Role.initRoles(choseRolePage.roles);
+                Role.randomShuffling(choseRolePage.roles);
+                choseRolePage.roles.remove(0);
+                playersNum_IsPlayed = 1;
+                game.setCrownInGame();
+                turnTxt.setText(game.getCurentPlayer().getName());
+                showListAgain();
+            }
+        }
+    }
+
+    private boolean checkGameLoopIsFinished() {
+        int playersNum = game.getPlayers().size();
+        if ((playersNum == 2 && playersNum_IsPlayed < 3 * playersNum)
+            || (playersNum == 3 && playersNum_IsPlayed < 2 * playersNum)
+            || (playersNum >= 4 && playersNum_IsPlayed < playersNum)) {
+            return true;
+        }
+        return false;
     }
 }

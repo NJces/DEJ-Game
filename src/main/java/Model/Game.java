@@ -54,6 +54,25 @@ public class Game {
         players.set(0, olderPlayer);
     }
 
+    public void setCrownInGame() {
+        for (Player player : players) {
+            if (player.getCrown()) {
+                int kingIndex = players.indexOf(player);
+                players.set(kingIndex, players.get(0));
+                players.set(0, player);
+            }
+        }
+    }
+
+    public boolean hasKingCardRole() {
+        for (Player player : players) {
+            if (player.hasRole(Role.King)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private Player findOlderPlayer() {
         int maxAge = 0;
         for (Player player : players) {
@@ -115,6 +134,15 @@ public class Game {
             curentPlayer = players.get(0);
         }
         return curentPlayer;
+    }
+
+    public void finishedAGameLoop() {
+        for (Player player : players) {
+            if (player.getCrown()) {
+                curentPlayer = player;
+            }
+            player.finishedAGameLoop();
+        }
     }
 
 
