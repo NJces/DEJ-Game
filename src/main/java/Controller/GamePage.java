@@ -68,6 +68,10 @@ public class GamePage implements Initializable {
         choseRolePage = loader.getController();
     }
 
+    /**
+     * create a list of HBoxes that show some information of players
+     * @return
+     */
     private ArrayList<HBox> createPlayerList() {
         ArrayList<HBox> list = new ArrayList<>();
         for (Player player : game.getPlayers()) {
@@ -100,23 +104,26 @@ public class GamePage implements Initializable {
         return list;
     }
 
+    /**
+     * show list of players at the start
+     */
     private void showList() {
         ArrayList<HBox> list = createPlayerList();
         playersList.getChildren().addAll(list);
     }
 
+    /**
+     * show list of player that update in game
+     */
     public void showListAgain() {
         ArrayList<HBox> list = createPlayerList();
         playersList.getChildren().remove(0, game.getPlayers().size());
         playersList.getChildren().addAll(list);
     }
 
-    public void start() {
-        while (!isFinished()) {
-            //play game
-        }
-    }
-
+    /**
+     * check if game is finished (based on number of structure cards that struct)
+     */
     private boolean isFinished() {
         int playersNum = game.getPlayers().size();
         for (Player player : game.getPlayers()) {
@@ -168,6 +175,9 @@ public class GamePage implements Initializable {
         }
     }
 
+    /**
+     * check if all players chose role or not
+     */
     private boolean choseRoleIsFinished() {
         if ((!game.getCurentPlayer().getCrown()) ||(game.getCurentPlayer().getCrown() && choseRolePage.roles.size()/game.getPlayers().size() >= 1)) {
             return false;
@@ -207,24 +217,14 @@ public class GamePage implements Initializable {
             }
             else {
                 //preparing for next game loop
-                gideTxt.setText("اتمام دور بازی، انتخاب نقش");
-                sourceCheck.setVisible(false);
-                roleCheck.setVisible(false);
-                structCheck.setVisible(false);
-                game.finishedAGameLoop();
-                choseRole_iClicked = false;
-                choseRolePage.roles = new ArrayList<>();
-                Role.initRoles(choseRolePage.roles);
-                Role.randomShuffling(choseRolePage.roles);
-                choseRolePage.roles.remove(0);
-                playersNum_IsPlayed = 1;
-                game.setCrownInGame();
-                turnTxt.setText(game.getCurentPlayer().getName());
-                showListAgain();
+                prepareNextLoop();
             }
         }
     }
 
+    /**
+     * check if all role that chose played or not (based on number of players)
+     */
     private boolean checkGameLoopIsFinished() {
         int playersNum = game.getPlayers().size();
         if ((playersNum == 2 && playersNum_IsPlayed < 3 * playersNum)
@@ -233,5 +233,28 @@ public class GamePage implements Initializable {
             return true;
         }
         return false;
+    }
+
+    /**
+     * prepare next loop for chose role again and continue the game
+     */
+    private void prepareNextLoop() {
+        //finished last loop
+        gideTxt.setText("اتمام دور بازی، انتخاب نقش");
+        sourceCheck.setVisible(false);
+        roleCheck.setVisible(false);
+        structCheck.setVisible(false);
+        game.finishedAGameLoop();
+        choseRole_iClicked = false;
+
+        //start new loop
+        choseRolePage.roles = new ArrayList<>();
+        Role.initRoles(choseRolePage.roles);
+        Role.randomShuffling(choseRolePage.roles);
+        choseRolePage.roles.remove(0);
+        playersNum_IsPlayed = 1;
+        game.setCrownInGame();
+        turnTxt.setText(game.getCurentPlayer().getName());
+        showListAgain();
     }
 }

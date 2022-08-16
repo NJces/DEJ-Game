@@ -66,6 +66,10 @@ public enum Role {
         isDead = false;
     }
 
+    /**
+     * set roles in input array
+     * @param roles
+     */
     public static void initRoles(ArrayList<Role> roles) {
         for (Role role : Role.values()) {
             roles.add(role);
@@ -82,6 +86,10 @@ public enum Role {
         }
     }
 
+    /**
+     * specify next role based on role number
+     * @param curentRole
+     */
     public static Role nextRole(Role curentRole) {
         if (curentRole.number < 8) {
             for (Role role : Role.values()) {
@@ -93,6 +101,10 @@ public enum Role {
         return null;
     }
 
+    /**
+     * find the role by its name(English)
+     * @param name
+     */
     public static Role findByEnglishName(String name) {
         for (Role role : Role.values()) {
             if (role.name().equals(name)) {
@@ -102,6 +114,11 @@ public enum Role {
         return null;
     }
 
+    /**
+     * find the role by its name(Farsi)
+     * @param name
+     * @return
+     */
     public static Role findByFarsiName(String name) {
         for (Role role : Role.values()) {
             if (role.farsiName.equals(name)) {

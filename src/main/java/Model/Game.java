@@ -45,6 +45,9 @@ public class Game {
         }
     }
 
+    /**
+     * set crown for older player at the start
+     */
     private void setCrown() {
         Player olderPlayer = findOlderPlayer();
         olderPlayer.setCrown();
@@ -54,6 +57,9 @@ public class Game {
         players.set(0, olderPlayer);
     }
 
+    /**
+     * set crown in next turn for player that has King card role
+     */
     public void setCrownInGame() {
         for (Player player : players) {
             if (player.getCrown()) {
@@ -64,6 +70,10 @@ public class Game {
         }
     }
 
+    /**
+     * check if a player has King card role
+     * @return true (if a player is King)
+     */
     public boolean hasKingCardRole() {
         for (Player player : players) {
             if (player.hasRole(Role.King)) {
@@ -102,7 +112,10 @@ public class Game {
         return curentTurn;
     }
 
-
+    /**
+     * Specify next turn by roles number
+     * @return Player (that has curent role)
+     */
     public Player nextTurn() {
         Player player = null;
         while (player == null) {
@@ -116,6 +129,11 @@ public class Game {
         return player;
     }
 
+    /**
+     * find player by that has the role
+     * @param role
+     * @return player (if player by this role exist) else return null
+     */
     private Player searchPlayerByRole(Role role) {
         for (Player player : players) {
             if (player.hasRole(role) && !role.isDead()) {
@@ -125,6 +143,10 @@ public class Game {
         return null;
     }
 
+    /**
+     * Specify the next turn based on the order of the players in list
+     * @return curentTurn
+     */
     public Player nextPlayer() {
         int curentPlayerIndex = players.indexOf(curentPlayer);
         if (curentPlayerIndex < players.size()-1) {
@@ -136,6 +158,9 @@ public class Game {
         return curentPlayer;
     }
 
+    /**
+     * when a game loop is finished all roles must be taken from the player and curent player equal to King player
+     */
     public void finishedAGameLoop() {
         for (Player player : players) {
             if (player.getCrown()) {

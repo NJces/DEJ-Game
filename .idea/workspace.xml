@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="187bdba4-b71b-4fbc-97d7-3dea87f451f8" name="Changes" comment="Preparations for the start of a round of game">
+    <list default="true" id="187bdba4-b71b-4fbc-97d7-3dea87f451f8" name="Changes" comment="fixed sample loop of game">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GamePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GamePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/GamePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/GamePage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660631210278</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="fixed sample loop of game">
+      <created>1660638674350</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1660638674350</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -272,7 +278,8 @@
     <MESSAGE value="fixed the problem of show Player list multiple times and set older player at first" />
     <MESSAGE value="fixed chose role for players" />
     <MESSAGE value="Preparations for the start of a round of game" />
-    <option name="LAST_COMMIT_MESSAGE" value="Preparations for the start of a round of game" />
+    <MESSAGE value="fixed sample loop of game" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed sample loop of game" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

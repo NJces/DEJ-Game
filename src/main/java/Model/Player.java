@@ -60,7 +60,9 @@ public class Player {
         this.source = new Source(coins, cards);
     }
 
-
+    /**
+     * save the source of player and control it(structure cards and coins)
+     */
     private class Source {
         private int coins;
         private ArrayList<StructureCard> structureCards = new ArrayList<>();
@@ -110,6 +112,10 @@ public class Player {
         }
     }
 
+    /**
+     * struct cart in city
+     * @param card
+     */
     public void structCard(StructureCard card) {
         if (card.getCost() <= source.coins) {
             source.subtractCoins(card.getCost());
@@ -134,6 +140,10 @@ public class Player {
         return source.changedCards(cards);
     }
 
+    /**
+     * check if the player has this role or not
+     * @param role
+     */
     public boolean hasRole(Role role) {
         for (Role r : roles) {
             if (r.equals(role)) {
