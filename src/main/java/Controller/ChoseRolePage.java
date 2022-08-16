@@ -27,7 +27,7 @@ public class ChoseRolePage implements Initializable {
     public void showRoleList() {
         list.getChildren().removeAll(rolesCard);
         for (Role role : roles) {
-           Button button = new Button(role.name());
+           Button button = new Button(role.getFarsiName());
            button.setPrefSize(80, 130);
            rolesCard.add(button);
            list.getChildren().add(button);

@@ -5,22 +5,23 @@ import java.util.Random;
 import java.util.Stack;
 
 public enum Role {
-    Killer(1, ColorOfGame.Non.name()),
-    Robber(2, ColorOfGame.Non.name()),
-    Magician(3, ColorOfGame.Non.name()),
-    King(4, ColorOfGame.Golden.name()),
-    Doctor(5, ColorOfGame.Blue.name()),
-    Trader(6, ColorOfGame.Green.name()),
-    Architect(7, ColorOfGame.Non.name()),
-    Commander(8, ColorOfGame.Red.name());
+    Killer(1, ColorOfGame.Non.name(), "آدمکش"),
+    Robber(2, ColorOfGame.Non.name(), "راهزن"),
+    Magician(3, ColorOfGame.Non.name(), "تردست"),
+    King(4, ColorOfGame.Golden.name(), "شاه"),
+    Doctor(5, ColorOfGame.Blue.name(), "حکیم"),
+    Trader(6, ColorOfGame.Green.name(), "تاجر"),
+    Architect(7, ColorOfGame.Non.name(), "معمار"),
+    Commander(8, ColorOfGame.Red.name(), "سردار");
 
     private int number;
-    private String color;
+    private String color, farsiName;
     private boolean isDead, isRobbed, isMagic;
 
-    Role(int number, String color) {
+    Role(int number, String color, String farsiName) {
         this.number = number;
         this.color = color;
+        this.farsiName = farsiName;
         isDead = false;
         isRobbed = false;
     }
@@ -31,6 +32,10 @@ public enum Role {
 
     public String getColor() {
         return color;
+    }
+
+    public String getFarsiName() {
+        return farsiName;
     }
 
     public boolean isDead() {
@@ -88,9 +93,18 @@ public enum Role {
         return null;
     }
 
-    public static Role findByName(String name) {
+    public static Role findByEnglishName(String name) {
         for (Role role : Role.values()) {
             if (role.name().equals(name)) {
+                return role;
+            }
+        }
+        return null;
+    }
+
+    public static Role findByFarsiName(String name) {
+        for (Role role : Role.values()) {
+            if (role.farsiName.equals(name)) {
                 return role;
             }
         }

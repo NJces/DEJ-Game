@@ -155,8 +155,13 @@ public class Player {
         source.subtractCoins(number);
     }
 
-    public void setRoles(String roleName) {
-        Role role = Role.findByName(roleName);
+    public void setRolesByEnglishName(String roleName) {
+        Role role = Role.findByEnglishName(roleName);
+        roles.add(role);
+    }
+
+    public void setRolesByFarsiName(String roleName) {
+        Role role = Role.findByFarsiName(roleName);
         roles.add(role);
     }
 

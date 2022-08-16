@@ -32,10 +32,14 @@ public class GamePage implements Initializable {
 
     private ChoseRolePage choseRolePage;
 
+    private boolean choseRole_iClicked = false;
+
     @FXML
     private VBox playersList;
     @FXML
     private Label turnTxt;
+    @FXML
+    private Label gideTxt;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -113,33 +117,39 @@ public class GamePage implements Initializable {
     }
 
     public void choseRole(ActionEvent actionEvent) throws IOException {
-        if (!choseRoleIsFinished()) {
-            choseRolePage.showRoleList();
-            choseRoleStage.show();
-            ArrayList<Button> rolesCard = choseRolePage.rolesCard;
-            for (int i = 0; i < rolesCard.size(); i++) {
-                Button button = rolesCard.get(i);
-                button.setOnAction(new EventHandler<ActionEvent>() {
-                    @Override
-                    public void handle(ActionEvent event) {
-                        game.getCurentPlayer().setRoles(button.getText());
-                        int roleCardIndex = choseRolePage.rolesCard.indexOf(button);
-                        Role role = Role.findByName(button.getText());
-                        choseRolePage.roles.remove(role);
-                        choseRoleStage.close();
-                        game.nextPlayer();
-                        Platform.runLater(new Runnable() {
-                            @Override
-                            public void run() {
-                                turnTxt.setText(game.getCurentPlayer().getName());
-                            }
-                        });
-                    }
-                });
+        if (!choseRole_iClicked) {
+            if (!choseRoleIsFinished()) {
+                choseRolePage.showRoleList();
+                choseRoleStage.show();
+                ArrayList<Button> rolesCard = choseRolePage.rolesCard;
+                for (int i = 0; i < rolesCard.size(); i++) {
+                    Button button = rolesCard.get(i);
+                    button.setOnAction(new EventHandler<ActionEvent>() {
+                        @Override
+                        public void handle(ActionEvent event) {
+                            game.getCurentPlayer().setRolesByFarsiName(button.getText());
+                            int roleCardIndex = choseRolePage.rolesCard.indexOf(button);
+                            Role role = Role.findByFarsiName(button.getText());
+                            choseRolePage.roles.remove(role);
+                            choseRoleStage.close();
+                            game.nextPlayer();
+                            Platform.runLater(new Runnable() {
+                                @Override
+                                public void run() {
+                                    turnTxt.setText(game.getCurentPlayer().getName());
+                                }
+                            });
+                        }
+                    });
+                }
+            } else {
+                printRoles();
+                gideTxt.setText("انتخاب نقش تمام شد، شروع بازی");
+                Player player = game.nextTurn();
+                String role = game.getCurentTurn().getFarsiName();
+                turnTxt.setText(role + ": " + player.getName());
+                choseRole_iClicked = true;
             }
-        }
-        else {
-            printRoles();
         }
     }
 

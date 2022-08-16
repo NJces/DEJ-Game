@@ -27,7 +27,7 @@ public class Game {
         coins = 25;
         setSource();
         setCrown();
-        curentTurn = Role.Killer;
+        curentTurn =null;
         curentPlayer = players.get(0);
     }
 
@@ -79,10 +79,22 @@ public class Game {
         return curentPlayer;
     }
 
+    public Role getCurentTurn() {
+        return curentTurn;
+    }
+
 
     public Player nextTurn() {
-        curentTurn = Role.nextRole(curentTurn);
-        return searchPlayerByRole(curentTurn);
+        Player player = null;
+        while (player == null) {
+            if (curentTurn == null) {
+                curentTurn = Role.Killer;
+            } else {
+                curentTurn = Role.nextRole(curentTurn);
+            }
+            player = searchPlayerByRole(curentTurn);
+        }
+        return player;
     }
 
     private Player searchPlayerByRole(Role role) {
